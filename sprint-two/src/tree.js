@@ -20,17 +20,20 @@ treeMethods.addChild = function(value){
   }
 };
 
-treeMethods.contains = function(target){
-  var hasIt = false;
-  if (this.value === target) {
-    hasIt = true;
-  }
-  else if (this.children !== undefined) {
-    for (var i = 0; i < this.children.length; i++) {
-      return (hasIt || this.children[i].contains(target));
+treeMethods.contains = function(target) {
+  var wasFound = false;
+  var recurse = function(node){
+    if (node.value === target){
+      wasFound = true;
+
+    } else if(node.children !== undefined){
+      for(var i = 0; i < node.children.length; i++){
+        recurse(node.children[i]);
+      }
     }
-  }
-  return hasIt;
+  };
+  recurse(this);
+  return wasFound;
 };
 
 
