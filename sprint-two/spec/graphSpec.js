@@ -41,6 +41,7 @@ describe('graph', function() {
   });
 
   it('should remove edges between nodes', function() {
+    console.log('hello');
     graph.addNode('apples');
     graph.addNode('bananas');
     graph.addNode('satsumas', 'bananas');
