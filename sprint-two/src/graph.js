@@ -2,6 +2,7 @@ var Graph = function(){
 };
 
 Graph.prototype.addNode = function(newNode, toNode){
+
 };
 
 Graph.prototype.contains = function(node){

@@ -1,3 +1,4 @@
+
 describe('binarySearchTree', function() {
   var binarySearchTree;
 
